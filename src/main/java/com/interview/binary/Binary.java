@@ -27,9 +27,8 @@ public class Binary {
     private StringBuilder value;
 
     public Binary add(String input) {
-        CharSequence right;
-        right = setDefaultValue(input);
         CharSequence left = value;
+        CharSequence right = setDefaultValue(input);
         StringBuilder sb = new StringBuilder();
         int carrier = 0;
         for (int i = left.length() - 1, j = right.length() - 1;

@@ -4,10 +4,19 @@ import net.jcip.annotations.NotThreadSafe;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * <p/>
  * This problem asked by @see <a href="https://github.com/JingtingWang"> Jingting Wang</a> from
- * @see <a  href="https://www.stypi.com/xillltmv">stypi</a>
+ * <a  href="https://www.stypi.com/xillltmv">stypi</a>
+ * </p>
  * Do a binary bitAdd without any Java internal operations.  For example, "1010111" + "11110"
  * Giving you two strings, calculate the sum.  Return value is {@link String}.
+ * Any invalid value will treate as "0".  For example,
+ * <p/>
+ * <pre>
+ *     {@code
+ *     Binary binary = new Binary("110").add("1").add("1101");
+ *     }
+ * </pre>
  */
 @NotThreadSafe
 public class Binary {
@@ -15,7 +24,7 @@ public class Binary {
         value = new StringBuilder(setDefaultValue(input));
     }
 
-    protected StringBuilder value;
+    private StringBuilder value;
 
     public Binary add(String input) {
         CharSequence right;
@@ -31,6 +40,7 @@ public class Binary {
             int current = a ^ b ^ carrier;
             sb.insert(0, current);
             carrier = a + b + carrier >= 2 ? 1 : 0;
+            carrier = a == 1 ? (b | carrier) == 1 ? 1 : 0 : (b & carrier) == 1 ? 1 : 0;
         }
         if (carrier == 1)
             sb.insert(0, '1');

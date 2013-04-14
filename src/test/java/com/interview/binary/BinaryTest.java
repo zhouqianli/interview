@@ -12,6 +12,10 @@ public class BinaryTest {
         String r = new Binary("").add(null).toString();
         Assert.assertEquals("0", r);
     }
+    public void testAddInvalidValues() {
+        String r = new Binary("123").add(null).add("2").add("00221").toString();
+        Assert.assertEquals("101", r);
+    }
 
     public void testAddSingleValue_1_0() {
         String r = new Binary("1").add("0").toString();

@@ -26,6 +26,8 @@ public class Binary {
 
     private StringBuilder value;
 
+    static final String HEAD_ONE = "1";
+
     public Binary add(String input) {
         CharSequence left = value;
         CharSequence right = setDefaultValue(input);
@@ -42,7 +44,7 @@ public class Binary {
         }
         if (carrier == 1)
             sb.insert(0, '1');
-        value = sb;
+        value = sb.length() > 1 ? sb.delete(0, sb.indexOf(HEAD_ONE)) : sb;
         return this;
     }
 

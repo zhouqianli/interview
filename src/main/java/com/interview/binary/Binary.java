@@ -39,7 +39,6 @@ public class Binary {
             int b = j < 0 ? 0 : right.charAt(j) == '1' ? 1 : 0;
             int current = a ^ b ^ carrier;
             sb.insert(0, current);
-            carrier = a + b + carrier >= 2 ? 1 : 0;
             carrier = a == 1 ? (b | carrier) == 1 ? 1 : 0 : (b & carrier) == 1 ? 1 : 0;
         }
         if (carrier == 1)

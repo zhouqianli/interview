@@ -12,43 +12,43 @@ import org.apache.commons.lang3.StringUtils;
 @NotThreadSafe
 public class Binary {
     public Binary(String input) {
-        value = String.valueOf(setDefaultValue(input));
+        value = new StringBuilder(setDefaultValue(input));
     }
 
-    protected volatile String value;
+    protected StringBuilder value;
 
     public Binary add(String input) {
-        char[] right;
+        CharSequence right;
         right = setDefaultValue(input);
-        char[] left = value.toCharArray();
+        CharSequence left = value;
         StringBuilder sb = new StringBuilder();
         int carrier = 0;
-        for (int i = left.length - 1, j = right.length - 1;
+        for (int i = left.length() - 1, j = right.length() - 1;
              i >= 0 || j >= 0;
              i--, j--) {
-            int a = i < 0 ? 0 : left[i] == '1' ? 1 : 0;
-            int b = j < 0 ? 0 : right[j] == '1' ? 1 : 0;
+            int a = i < 0 ? 0 : left.charAt(i) == '1' ? 1 : 0;
+            int b = j < 0 ? 0 : right.charAt(j) == '1' ? 1 : 0;
             int current = a ^ b ^ carrier;
             sb.insert(0, current);
             carrier = a + b + carrier >= 2 ? 1 : 0;
         }
         if (carrier == 1)
             sb.insert(0, '1');
-        value = sb.toString();
+        value = sb;
         return this;
     }
 
-    private char[] setDefaultValue(String input) {
-        char[] right;
+    private CharSequence setDefaultValue(String input) {
+        CharSequence charSequence;
         if (StringUtils.isNotEmpty(input))
-            right = input.toCharArray();
+            charSequence = input;
         else
-            right = new char[]{'0'};
-        return right;
+            charSequence = "0";
+        return charSequence;
     }
 
     @Override
     public String toString() {
-        return value;
+        return value.toString();
     }
 }

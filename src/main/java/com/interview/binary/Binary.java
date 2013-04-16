@@ -39,12 +39,21 @@ public class Binary {
             int a = i < 0 ? 0 : left.charAt(i) == '1' ? 1 : 0;
             int b = j < 0 ? 0 : right.charAt(j) == '1' ? 1 : 0;
             int current = a ^ b ^ carrier;
-            sb.insert(0, current);
+            sb.append(current);
             carrier = a == 1 ? (b | carrier) == 1 ? 1 : 0 : (b & carrier) == 1 ? 1 : 0;
         }
         if (carrier == 1)
-            sb.insert(0, '1');
-        value = sb.length() > 1 ? sb.delete(0, sb.indexOf(HEAD_ONE)) : sb;
+            sb.append('1');
+        /*
+        TODO:Should create new data structure if need a better performance
+        For example, StringBuild SHOULD
+         - have O(1) for reverse & delete operation.
+         - can set for optimization for read or write
+         - O(1) for head insert
+         - O(1) for remove one element
+         - O(n) for remove some part of elements
+        */
+        value = sb.length() > 1 ? sb.reverse().delete(0, sb.indexOf(HEAD_ONE)) : sb.reverse();
         return this;
     }
 

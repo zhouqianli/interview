@@ -45,7 +45,7 @@ public class Binary {
         if (carrier == 1)
             sb.append('1');
         /*
-        TODO:Should create new data structure if need a better performance
+        Warning :should create new data structure if need a better performance
         For example, StringBuild SHOULD
          - have O(1) for reverse & delete operation.
          - can set for optimization for read or write

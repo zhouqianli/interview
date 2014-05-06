@@ -17,12 +17,10 @@ public class StringEx {
     public static int strstr(char[] source, char[] target) {
         final int NOT_FOUND = -1;
         for (int i = 0; i < source.length; i++) {
-            if (source[i] == target[0]) {
                 int temp = i;
                 for (int j = 0; source[temp] == target[j] && j < target.length; j++, temp++)
                     if (j + 1 == target.length)
                         return i;
-            }
         }
         return NOT_FOUND;
     }

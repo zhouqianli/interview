@@ -1,4 +1,4 @@
-package com.interview.binary;
+package binary;
 
 import net.jcip.annotations.NotThreadSafe;
 import org.apache.commons.lang3.StringUtils;

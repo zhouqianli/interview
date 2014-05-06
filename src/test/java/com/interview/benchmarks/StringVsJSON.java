@@ -3,7 +3,6 @@ package com.interview.benchmarks;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.databind.util.TokenBuffer;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -100,6 +99,7 @@ public class StringVsJSON {
             }
         }
     }
+
     @Test(invocationCount = COUNT)
     public void testFromTextFile() throws Exception {
         try (FileInputStream fstream = new FileInputStream("input.txt");
@@ -120,7 +120,6 @@ public class StringVsJSON {
 
 
     public static class UserRecord {
-        private String sid;
 
         public String getTimestamp() {
             return timestamp;
@@ -130,6 +129,7 @@ public class StringVsJSON {
             this.timestamp = timestamp;
         }
 
+        private String sid;
         private String timestamp;
         private String url;
         private String source;

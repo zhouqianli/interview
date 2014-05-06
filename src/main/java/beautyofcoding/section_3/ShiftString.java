@@ -1,4 +1,4 @@
-package com.interview.beautyofcoding.section_3;
+package beautyofcoding.section_3;
 
 /**
  *  Problem:字符串移位包含问题

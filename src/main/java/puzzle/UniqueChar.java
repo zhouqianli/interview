@@ -1,4 +1,4 @@
-package com.interview.puzzle;
+package puzzle;
 
 /**
  * @author zhouzh

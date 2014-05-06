@@ -1,4 +1,4 @@
-package com.interview.puzzle;
+package puzzle;
 
 import java.util.ArrayList;
 import java.util.List;

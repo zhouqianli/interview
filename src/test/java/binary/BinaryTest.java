@@ -1,4 +1,4 @@
-package com.interview.binary;
+package binary;
 
 import org.junit.Assert;
 import org.testng.annotations.Test;

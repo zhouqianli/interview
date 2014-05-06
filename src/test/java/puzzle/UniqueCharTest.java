@@ -1,11 +1,13 @@
-package com.interview.puzzle;
+package puzzle;
 
+import com.interview.test.Sub;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
  * @author zhouzh
  */
+@Test
 public class UniqueCharTest {
     @Test
     public void testIsUnique() throws Exception {
@@ -25,5 +27,9 @@ public class UniqueCharTest {
         Assert.assertEquals(UniqueChar.noAdditionalStructure(" "),true);
         Assert.assertEquals(UniqueChar.noAdditionalStructure(""),true);
         Assert.assertEquals(UniqueChar.noAdditionalStructure(null),true);
+    }
+
+    public void testMainSub() throws Exception{
+        new Sub("haha");
     }
 }

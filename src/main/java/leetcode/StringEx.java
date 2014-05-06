@@ -11,16 +11,19 @@ public class StringEx {
      * Strstr returns a pointer to the first occurrence of the substring in the source.
      * If the substring is not found, strstr returns a null pointer.
      * 在Java中必须使用length成员来获取数组长度。String的内部维护了一个value就是一个char数组
+     *
      * @return an index of first substring location, -1 for not found
      * @see <a>http://leetcode.com/2010/10/implement-strstr-to-find-substring-in.html</a>
      */
     public static int strstr(char[] source, char[] target) {
         final int NOT_FOUND = -1;
-        for (int i = 0; i < source.length; i++) {
-                int temp = i;
-                for (int j = 0; source[temp] == target[j] && j < target.length; j++, temp++)
-                    if (j + 1 == target.length)
-                        return i;
+        if (source == null || source.length == 0 || target == null || target.length == 0)
+            return NOT_FOUND;
+        for (int i = 0; i < source.length - target.length + 1; i++) {
+            int temp = i;
+            for (int j = 0; source[temp] == target[j] && j < target.length; j++, temp++)
+                if (j + 1 == target.length)
+                    return i;
         }
         return NOT_FOUND;
     }

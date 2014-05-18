@@ -71,7 +71,7 @@ public class StringVsJSON {
 
     @Test(invocationCount = COUNT)
     public void testFromJsonFile() throws Exception {
-        try (JsonParser jp = jsonFactory.createParser(new File("input_json.txt"))) {
+        try (JsonParser jp = jsonFactory.createParser(new File("res/input_json.txt"))) {
             UserRecord user = new UserRecord();
             jp.nextToken();
             while (jp.nextToken() != JsonToken.START_OBJECT) {
@@ -102,7 +102,7 @@ public class StringVsJSON {
 
     @Test(invocationCount = COUNT)
     public void testFromTextFile() throws Exception {
-        try (FileInputStream fstream = new FileInputStream("input.txt");
+        try (FileInputStream fstream = new FileInputStream("res/input.txt");
              BufferedReader br = new BufferedReader(new InputStreamReader(fstream))) {
             String strLine;
             while ((strLine = br.readLine()) != null) {

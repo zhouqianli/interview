@@ -1,0 +1,38 @@
+apply plugin: 'java'
+// The scala plugin cannot work with JDK8.  Seems need back to Java world.
+//apply plugin: 'scala'
+
+version = '1.0'
+
+compileJava {
+    //enable compilation in a separate daemon process
+    options.fork = true
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+// Comment this part since scala nto support JDK8 @see <a>http://issues.gradle.org/browse/GRADLE-3023</a>
+/*  compile 'org.scala-lang:scala-library:2.10.2'
+
+    testCompile 'org.scalatest:scalatest_2.10:2.0'
+    testCompile 'org.scalacheck:scalacheck_2.10:1.11.2'*/
+
+    compile 'org.testng:testng:6.8.7'
+    compile 'org.apache.commons:commons-lang3:3.1'
+    compile 'net.jcip:jcip-annotations:1.0'
+    compile 'net.java.dev.jna:jna:4.0.0'
+    compile 'net.java.dev.jna:jna-platform:4.0.0'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.3.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.0'
+}
+
+task wrapper(type: Wrapper) {
+    // 1.12 still not work with IDEA
+    gradleVersion = '1.11'
+}

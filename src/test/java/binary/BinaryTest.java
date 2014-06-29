@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
  */
 @Test
 public class BinaryTest {
-    public void testAddEmptyValues() {
+    public  void testAddEmptyValues() {
         String r = new Binary("").add(null).toString();
         Assert.assertEquals("0", r);
     }

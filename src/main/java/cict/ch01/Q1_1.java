@@ -7,8 +7,10 @@ import java.security.InvalidParameterException;
  * all unique characters.  What if you cannot use additional
  * data structures?
  */
-public class Q1_1 {
-    public static boolean isUniqueChars(CharSequence input) {
+public enum Q1_1 {
+    INSTANCE;
+
+    public boolean isUniqueChars(CharSequence input) {
         char[] value = new char[256];
         boolean isUnique = true;
         verify(input);
@@ -23,12 +25,12 @@ public class Q1_1 {
         return isUnique;
     }
 
-    private static void verify(CharSequence input) {
+    private void verify(CharSequence input) {
         if (input == null || input.equals(""))
             throw new InvalidParameterException();
     }
 
-    public static boolean isUniqueChars_NoAdditionalData(CharSequence input) {
+    public boolean isUniqueChars_NoAdditionalData(CharSequence input) {
         boolean isUnique = true;
         for (int i = 0; i < input.length() - 1; ++i) {
             for (int j = i + 1; j < input.length(); ++j)

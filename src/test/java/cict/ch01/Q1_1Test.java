@@ -11,31 +11,31 @@ public class Q1_1Test {
 
     @Test
     public void testIsUniqueChars() throws Exception {
-        Assert.assertTrue(Q1_1.isUniqueChars("abcder*)^%$"));
-        Assert.assertTrue(Q1_1.isUniqueChars("a"));
-        Assert.assertFalse(Q1_1.isUniqueChars("aaaa"));
-        Assert.assertFalse(Q1_1.isUniqueChars("ablkj;lk;lkj;"));
-        Assert.assertFalse(Q1_1.isUniqueChars(" abcder*)^%$ "));
-        Assert.assertFalse(Q1_1.isUniqueChars("  "));
+        Assert.assertTrue(Q1_1.INSTANCE.isUniqueChars("abcder*)^%$"));
+        Assert.assertTrue(Q1_1.INSTANCE.isUniqueChars("a"));
+        Assert.assertFalse(Q1_1.INSTANCE.isUniqueChars("aaaa"));
+        Assert.assertFalse(Q1_1.INSTANCE.isUniqueChars("ablkj;lk;lkj;"));
+        Assert.assertFalse(Q1_1.INSTANCE.isUniqueChars(" abcder*)^%$ "));
+        Assert.assertFalse(Q1_1.INSTANCE.isUniqueChars("  "));
     }
 
     @Test(expectedExceptions = InvalidParameterException.class)
     public void testIsUniqueCharsWithNullInput() throws Exception {
-        Q1_1.isUniqueChars(null);
+        Q1_1.INSTANCE.isUniqueChars(null);
     }
 
     @Test(expectedExceptions = InvalidParameterException.class)
     public void testIsUniqueCharsWithErrorInput() throws Exception {
-        Q1_1.isUniqueChars("");
+        Q1_1.INSTANCE.isUniqueChars("");
     }
 
     @Test
     public void testIsUniqueChars_NoAdditionalData() throws Exception {
-        Assert.assertTrue(Q1_1.isUniqueChars_NoAdditionalData("abcder*)^%$"));
-        Assert.assertTrue(Q1_1.isUniqueChars_NoAdditionalData("a"));
-        Assert.assertFalse(Q1_1.isUniqueChars_NoAdditionalData("aaaa"));
-        Assert.assertFalse(Q1_1.isUniqueChars_NoAdditionalData("ablkj;lk;lkj;"));
-        Assert.assertFalse(Q1_1.isUniqueChars_NoAdditionalData(" abcder*)^%$ "));
-        Assert.assertFalse(Q1_1.isUniqueChars_NoAdditionalData("  "));
+        Assert.assertTrue(Q1_1.INSTANCE.isUniqueChars_NoAdditionalData("abcder*)^%$"));
+        Assert.assertTrue(Q1_1.INSTANCE.isUniqueChars_NoAdditionalData("a"));
+        Assert.assertFalse(Q1_1.INSTANCE.isUniqueChars_NoAdditionalData("aaaa"));
+        Assert.assertFalse(Q1_1.INSTANCE.isUniqueChars_NoAdditionalData("ablkj;lk;lkj;"));
+        Assert.assertFalse(Q1_1.INSTANCE.isUniqueChars_NoAdditionalData(" abcder*)^%$ "));
+        Assert.assertFalse(Q1_1.INSTANCE.isUniqueChars_NoAdditionalData("  "));
     }
 }

@@ -11,7 +11,7 @@ public enum Q1_1 {
     INSTANCE;
 
     public boolean isUniqueChars(CharSequence input) {
-        char[] value = new char[256];
+        int[] value = new int[256];
         boolean isUnique = true;
         verify(input);
         for (int i = 0; i < input.length(); ++i) {

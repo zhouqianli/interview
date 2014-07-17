@@ -47,6 +47,8 @@ public class ArrayEx {
         for (int i = 1; i < input.length; i++)
             if (input[result].equals(input[i])) {
                 if (++counter <= n)
+                    // this is a main difference compare to part I
+                    // need move element even they match
                     input[++result] = input[i];
             } else {
                 counter = 1;

@@ -32,7 +32,7 @@ public class ArrayEx {
 
     /**
      * @param input the input array with sorted elements
-     * @param n     duplicate counter
+     * @param n     duplicate counter, indicate how many dup number allowed
      * @param <T>   input element type
      * @return the length of new array
      * @see <a href="https://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/">leetcode OJ</a>

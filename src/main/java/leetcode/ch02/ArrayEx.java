@@ -47,7 +47,7 @@ public class ArrayEx {
         for (int i = 1; i < input.length; i++)
             if (input[result].equals(input[i])) {
                 if (++counter <= n)
-                    ++result;
+                    input[++result] = input[i];
             } else {
                 counter = 1;
                 input[++result] = input[i];

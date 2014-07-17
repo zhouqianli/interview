@@ -35,6 +35,15 @@ public class ArrayExTest {
     }
 
     @Test
+    public void testRemoveDuplicatesFromSortedArrayII04() throws Exception {
+        Integer[] input = {1, 1, 1, 1, 3, 3};
+        Integer[] expected = {1, 1, 3, 3, 3, 3};
+        int count = ArrayEx.removeDuplicatesFromSortedArrayII(input, 2);
+        Assert.assertEquals(input, expected);
+        Assert.assertEquals(count, 4);
+    }
+
+    @Test
     public void testRemoveDuplicatesFromSortedArray01() throws Exception {
         Integer[] input = {1, 1, 2};
         Integer[] expected = {1, 2, 2};

@@ -25,7 +25,9 @@ public class ArrayEx {
 
         int result = 0;
         for (int i = 1; i < input.length; i++)
-            if (!input[result].equals(input[i]))
+            if (input[result].equals(input[i]))
+                input[result] = input[i];
+            else
                 input[++result] = input[i];
         return result + 1;
     }

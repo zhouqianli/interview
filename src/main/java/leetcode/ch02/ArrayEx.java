@@ -23,13 +23,11 @@ public class ArrayEx {
         if (input.length < 2)
             return input.length;
 
-        int result = 0;
+        int j = 1;
         for (int i = 1; i < input.length; i++)
-            if (input[result].equals(input[i]))
-                input[result] = input[i];
-            else
-                input[++result] = input[i];
-        return result + 1;
+            if (!input[i].equals(input[j - 1]))
+                input[j++] = input[i];
+        return j;
     }
 
     /**
@@ -43,20 +41,32 @@ public class ArrayEx {
      * Your function should return length = 5, and A is now [1,1,2,2,3]
      */
     public static <T> int removeDuplicatesFromSortedArrayII(T[] input, int n) {
-        if (input.length < 2)
+        if (input.length < n)
             return input.length;
-        int result = 0, counter = 1;
-        for (int i = 1; i < input.length; i++)
-            if (input[result].equals(input[i])) {
-                if (++counter <= n)
-                    // this is a main difference compare to part I
-                    // need move element even they match
-                    input[++result] = input[i];
-            } else {
-                counter = 1;
-                input[++result] = input[i];
-            }
-        return result + 1;
+        int j = n;
+        for (int i = j; i < input.length; i++)
+            if (!input[i].equals(input[j - n]))
+                input[j++] = input[i];
+        return j;
     }
 
+
+    /**
+     * Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+     * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+     * You are given a target value to search. If found in the array return its index, otherwise return -1.
+     * You may assume no duplicate exists in the array.
+     *
+     * @param input the rotated sorted array
+     * @param item  which is we searched for
+     * @param <T>   element type
+     * @return -1 if not found, index if found
+     * @see <a href="https://oj.leetcode.com/problems/search-in-rotated-sorted-array/">OJ</a>
+     * @see <a href="http://leetcode.com/2010/04/searching-element-in-rotated-array.html">Blog</a>
+     */
+    public static <T> int searchInRotatedSortedArray(T[] input, T item) {
+        final int NOT_FOUND = -1;
+
+        return NOT_FOUND;
+    }
 }

@@ -31,9 +31,12 @@ dependencies {
     compile 'net.java.dev.jna:jna-platform:4.0.0'
     compile 'com.fasterxml.jackson.core:jackson-core:2.3.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.3.0'
+    compile 'org.apache.httpcomponents:httpclient:4.3.6'
+    compile 'org.apache.httpcomponents:httpmime:4.3.6'
+    compile 'org.apache.commons:commons-compress:1.9'
+    compile 'com.jayway.jsonpath:json-path:1.2.0'
 }
 
 task wrapper(type: Wrapper) {
-    // 1.12 still not work with IDEA
-    gradleVersion = '1.11'
+    gradleVersion = '2.2'
 }
